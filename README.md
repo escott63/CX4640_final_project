@@ -47,7 +47,10 @@ end
 eigVal = A*x/x                             {Having found eigenvector, x, solve for corresponding eigenvalue}
 ```
 
-Another alteration to the power method is the shifting of eigenvalues. 
+Another alteration to the power method is the shifting of eigenvalues. If $Ax = \lambda x$, then the eigenvalues can be shifted by any number $\alpha$ through $(A-\alpha I)x = (\lambda-\alpha)x$ [5]. If the aproximate area of an eigenvalue is known for matrix A, then matrix A can be shifted by $\alpha$, and it will converge to $\sigma$ through shifted inverse power method such that $\sigma = \frac{1}{\lambda-\alpha}$ where $\lambda$ is the desired eigenvalue. Having started with a random vector $x_0$, the shifted inverse power method is defined as the iteration [5]:
+$$y_k = (A-\alpha I)^{-1}x_k$$
+$$x_{k+1} = \frac{y_k}{\lVert y_k \rVert_{\infty}}$$
+$x_{k+1}$ will converge to the eigenvector which corresponds to the shifted eigenvalue $\sigma$. Then, the actual desired eigenvalue can be found by solving $\lambda = \frac{1}{\sigma} + \alpha$. Therefore, by choosing a random $\alpha$ which is close to a desired eigenvalue which is not the dominant eigenvalue, shifted inverse power method can be employed and will converge to a value $\sigma$ which can be used to find the desired eigenvalue and eigenvector.
 ## Strengths and Limitations
 
 ## Common Applications
