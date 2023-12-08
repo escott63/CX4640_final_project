@@ -52,7 +52,7 @@ $$y_k = (A-\alpha I)^{-1}x_k$$
 $$x_{k+1} = \frac{y_k}{\lVert y_k \rVert_{\infty}}$$
 $x_{k+1}$ will converge to the eigenvector which corresponds to the shifted eigenvalue $\sigma$. Then, the actual desired eigenvalue can be found by solving $\lambda = \frac{1}{\sigma} + \alpha$. Therefore, by choosing a random $\alpha$ which is close to a desired eigenvalue which is not the dominant eigenvalue, shifted inverse power method can be employed and will converge to a value $\sigma$ which can be used to find the desired eigenvalue and eigenvector.
 ## Strengths and Limitations
-
+There are multiple reasons that will cause the power method to fail. If the initial random vector, $x_0$, does not have any component in the direction of dominant eigenvector, i.e. $a_1 = 0$ for $x_0 = a_1x_1 + a_2x_2 + ... + a_nx_n$, then the power method will never be able to converge to the largest eigenvector causing the algorithm to fail. Although, in real world application, this problem often does not occur do the the fact that rounding errors in computers during iterations will cause the vector to have a very slight component in the direction of the dominant eigenvector allowing the power method to converge to the dominant eigenvector eventually. 
 ## Common Applications
 
 ## References
@@ -60,5 +60,7 @@ $x_{k+1}$ will converge to the eigenvector which corresponds to the shifted eige
 2. Lecture # 10 The Power Method for Eigenvalues. (n.d.). from [https://www.cse.psu.edu/~b58/cse456/lecture10.pdf](https://www.cse.psu.edu/~b58/cse456/lecture10.pdf)
 3. File:Animation of the Power Iteration Algorithm.gif - Wikipedia. (2020, February 6). Commons.wikimedia.org. [https://en.wikipedia.org/wiki/File:Animation_of_the_Power_Iteration_Algorithm.gif#file](https://en.wikipedia.org/wiki/File:Animation_of_the_Power_Iteration_Algorithm.gif#file)
 4. Vector iteration (power method) 7.1 Simple vector iteration. (n.d.). from [https://people.inf.ethz.ch/arbenz/ewp/Lnotes/chapter7.pdf](https://people.inf.ethz.ch/arbenz/ewp/Lnotes/chapter7.pdf)
-5. Yu-Kai Hong, An introduction to the Power Method and (shifted/Inverse) Power Method, 2007, from [http://www.math.nuk.edu.tw/jinnliu/Software_Engineering/IS_PowerMethod.pdf](http://www.math.nuk.edu.tw/jinnliu/Software_Engineering/IS_PowerMethod.pdf)
-6. 
+5. Yu-Kai Honsg, An introduction to the Power Method and (shifted/Inverse) Power Method, 2007, from [http://www.math.nuk.edu.tw/jinnliu/Software_Engineering/IS_PowerMethod.pdf](http://www.math.nuk.edu.tw/jinnliu/Software_Engineering/IS_PowerMethod.pdf)
+6. d
+7. GT | GT Login. (n.d.). Sso.gatech.edu. from [https://gatech.instructure.com/courses/337286/files/folder/Post-class%20slides?preview=45927399](https://gatech.instructure.com/courses/337286/files/folder/Post-class%20slides?preview=45927399)
+8. 
