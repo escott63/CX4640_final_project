@@ -31,12 +31,14 @@ From this equation, $\lambda_1$ and $x_1$, which are the dominant eigenvalue and
 
 ![](Animation_of_the_Power_Iteration_Algorithm.gif) [3]
 
-The algorithm stops when consecutive iterations have been mutliplied by the same number with this number being the dominant eigenvalue. 
+The algorithm stops when consecutive iterations have been mutliplied by the same number with this number being the dominant eigenvalue.
 ## Improvements
-One of the obvious problems with the initial algorithm for the power method is that, as k increases, $\lambda_1^ka_1x_1$ can increase to an extremely large value or an extremely small value if $|\lambda_1| < 1$. This will cause an overflow or an underflow as the measured vector gets either too large or small for the computer to do calculations. Therefore, normalization or scaling in each iteration is required so that the measured vector is able to continually be utilized [2]. Normalization is done by dividing the vector at iteration by its largest value, the infinity norm, so that the new largest value in the vector is 1. If $x_k$ is the kth iteration of the algorithm, then $x_k = \frac{Ax_{k-1}}{||Ax_{k-1}||_{\infty}}$. Normalization or scaling keeps the vector after each iteration from becoming either too large or too small.
+One of the obvious problems with the initial algorithm for the power method is that, as k increases, $\lambda_1^ka_1x_1$ can increase to an extremely large value or an extremely small value if $|\lambda_1| < 1$. This will cause an overflow or an underflow as the measured vector gets either too large or small for the computer to do calculations. Therefore, normalization or scaling in each iteration is required so that the measured vector is able to continually be utilized [2]. Normalization is done by dividing the vector at iteration by its largest value, the infinity norm, so that the new largest value in the vector is 1. If $x_k$ is the kth iteration of the algorithm, then $x_k = \frac{Ax_{k-1}}{\lVert Ax_{k-1} \rVert_{\infty}}$. Normalization or scaling keeps the vector after each iteration from becoming either too large or too small. It is also good practice to choose a normalized random starting vector, $x_0$, such that its greatest value, $\lVert x_0 \rVert_{\infty}$, is 1. 
 
-The full process for power method:
+The full process for power method []:
+```
 
+```
 
 ## Strengths and Limitations
 
@@ -46,3 +48,5 @@ The full process for power method:
 1. 0.3 POWER METHOD FOR APPROXIMATING EIGENVALUES. (n.d.). [https://ergodic.ugr.es/cphys/LECCIONES/FORTRAN/power_method.pdf](https://ergodic.ugr.es/cphys/LECCIONES/FORTRAN/power_method.pdf)
 2. Lecture # 10 The Power Method for Eigenvalues. (n.d.). Retrieved December 7, 2023, from [https://www.cse.psu.edu/~b58/cse456/lecture10.pdf](https://www.cse.psu.edu/~b58/cse456/lecture10.pdf)
 3. 
+4. Vector iteration (power method) 7.1 Simple vector iteration. (n.d.). Retrieved December 8, 2023, from [https://people.inf.ethz.ch/arbenz/ewp/Lnotes/chapter7.pdf](https://people.inf.ethz.ch/arbenz/ewp/Lnotes/chapter7.pdf)
+5. 
