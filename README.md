@@ -19,6 +19,7 @@ An eigenvalue problem for which this algorithm is used can be defind as [1]:
 $$(A-\lambda I)x = 0$$
 where A is an abritrary square matrix, I is the identity matrix, and $\lambda$ and and x are the corresonding eigenvalues and eigenvectors which solve the equation. Eigenvalues are the values for which $A\lambda = Ax$ is a true statement. Thus, mulitplying an eigenvector by the matrix is equivalent to multiplying the eigenvector with its corresponding eigenvector. If A is an nxn matrix (having n number rows and n number columns), then matrix A can have up to n number eigenvalues and eigenvectors. Therefore, as matrix A gets arbitrarily large, it can become computationaly expensive to compute all of the eigenvalues and eigenvectors for a given matrix. Consequently, for many problems, only the dominant eigenvalue and eigenvector is desired. Henceforth, the power method was devised which cuts out much unneccesary computation by only solving for the dominant eigenvector and eigenvalue. 
 ## Power Method Overview
+The power method starts by choosing a random vector, $x_0$, such that [2]:
 
 ![](Animation_of_the_Power_Iteration_Algorithm.gif)
 
@@ -31,4 +32,6 @@ where A is an abritrary square matrix, I is the identity matrix, and $\lambda$ a
 ## Common Applications
 
 ## References
-1. 0.3 POWER METHOD FOR APPROXIMATING EIGENVALUES. (n.d.). https://ergodic.ugr.es/cphys/LECCIONES/FORTRAN/power_method.pdf
+1. 0.3 POWER METHOD FOR APPROXIMATING EIGENVALUES. (n.d.). [https://ergodic.ugr.es/cphys/LECCIONES/FORTRAN/power_method.pdf](https://ergodic.ugr.es/cphys/LECCIONES/FORTRAN/power_method.pdf)
+2. Lecture # 10 The Power Method for Eigenvalues. (n.d.). Retrieved December 7, 2023, from [https://www.cse.psu.edu/~b58/cse456/lecture10.pdf](https://www.cse.psu.edu/~b58/cse456/lecture10.pdf)
+3. 
