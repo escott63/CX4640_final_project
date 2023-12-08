@@ -1,6 +1,9 @@
-|NAME     |TOPIC       |TITLE                                                    |
-|:-------:|:----------:|:-------------------------------------------------------:|
-|Eli Scott|Power Method|Background, Analysis, and Application of the Power Method|
+---
+Name: Eli Scott
+Topic: 13
+Title: Background, Analysis, and Applications of the Power Method
+----
+
 
 # Power Method
 ## Table of Contents
