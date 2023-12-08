@@ -55,7 +55,7 @@ Another alteration to the power method is the shifting of eigenvalues.
 ## References
 1. 0.3 POWER METHOD FOR APPROXIMATING EIGENVALUES. (n.d.). [https://ergodic.ugr.es/cphys/LECCIONES/FORTRAN/power_method.pdf](https://ergodic.ugr.es/cphys/LECCIONES/FORTRAN/power_method.pdf)
 2. Lecture # 10 The Power Method for Eigenvalues. (n.d.). from [https://www.cse.psu.edu/~b58/cse456/lecture10.pdf](https://www.cse.psu.edu/~b58/cse456/lecture10.pdf)
-3. 
+3. File:Animation of the Power Iteration Algorithm.gif - Wikipedia. (2020, February 6). Commons.wikimedia.org. [https://en.wikipedia.org/wiki/File:Animation_of_the_Power_Iteration_Algorithm.gif#file](https://en.wikipedia.org/wiki/File:Animation_of_the_Power_Iteration_Algorithm.gif#file)
 4. Vector iteration (power method) 7.1 Simple vector iteration. (n.d.). from [https://people.inf.ethz.ch/arbenz/ewp/Lnotes/chapter7.pdf](https://people.inf.ethz.ch/arbenz/ewp/Lnotes/chapter7.pdf)
 5. Yu-Kai Hong, An introduction to the Power Method and (shifted/Inverse) Power Method, 2007, from [http://www.math.nuk.edu.tw/jinnliu/Software_Engineering/IS_PowerMethod.pdf](http://www.math.nuk.edu.tw/jinnliu/Software_Engineering/IS_PowerMethod.pdf)
 6. 
