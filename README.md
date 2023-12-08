@@ -7,7 +7,6 @@
 * [Overview](#overview)
 * [Background](#background)
 * [Power Method Overview](#power-method-overview)
-* [Formulation](#formulation)
 * [Improvements](#improvements)
 * [Strengths and Limitations](#strengths-and-limitations)
 * [Common Applications](#common-applications)
@@ -26,11 +25,12 @@ $$Ax_0 = a_1\lambda_1x_1 + a_2\lambda_2x_2 + ... + a_n\lambda_nx_n$$
 Then, by iteratively multiplying a given matrix A to the random vector, $x_0$, the resulting vector will converge to the dominant eigenvector [2]:
 $$A^kx_0 = a_1\lambda_1^kx_1 + a_2\lambda_2^kx_2 + ... + a_n\lambda^k_nx_n$$
 $$A^kx_0 = \lambda_1^k(a_1x_1 + a_2(\frac{\lambda_2}{\lambda_1})^kx_2 + ... + a_n(\frac{\lambda_n}{\lambda_1})^kx_n)$$
-
+As k gets arbitrarily large, $\lim_{k\to\infty} (\frac{\lambda_2}{\lambda_1})^k = 0$ and $\lim_{k\to\infty} (\frac{\lambda_n}{\lambda_1})^k = 0$ since $|\lambda_1| >= |\lambda_2| >= ... >= |\lambda_n|$. This simplifies the equation leaving:
+$$A^kx_0 = \lambda_1^ka_1x_1$$
+From this equation, $\lambda_1$ and $x_1$, which are the dominant eigenvalue and eigenvector, are obtained. The process of approaching the dominant eigenvector through each iteration can be seen by:
 
 ![](Animation_of_the_Power_Iteration_Algorithm.gif) [3]
 
-## Formulation
 
 ## Improvements
 
