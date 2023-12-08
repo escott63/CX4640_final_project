@@ -32,6 +32,24 @@ From this equation, $\lambda_1$ and $x_1$, which are the dominant eigenvalue and
 ![](Animation_of_the_Power_Iteration_Algorithm.gif) [3]
 
 The algorithm stops when consecutive iterations have been mutliplied by the same number with this number being the dominant eigenvalue.
+
+Example: Given matrix A = [1 -2; -4 3] which has eigenvalues of -1 and 5
+
+Initial vector, $x_0$, = $[1, -1]^T$.
+
+|Kth Iteration|$x_k^T$       |Ratio|
+|:-----------:|:------------:|:---:|
+|0            |1,          -1|     |
+|1            |3,          -7|7    |
+|2            |17,        -33|4.714|
+|3            |83,       -167|5.061|
+|4            |417,      -833|4.988|
+|5            |2083,    -4167|5.002|
+|6            |10417,  -20833|4.999|
+|7            |52083, -104167|5.000|
+
+As shown, in only 7 iteration, the power method approached the dominant eigenvalue of 5. Additionally, $x_k^T$ converged to the corresponding dominant eigenvector $[-0.5, 1]^T$ as $\frac{52083}{-104167} = -0.500$.
+
 ## Improvements
 One of the obvious problems with the initial algorithm for the power method is that, as k increases, $\lambda_1^ka_1x_1$ can increase to an extremely large value or an extremely small value if $|\lambda_1| < 1$. This will cause an overflow or an underflow as the measured vector gets either too large or small for the computer to do calculations. Therefore, normalization or scaling in each iteration is required so that the measured vector is able to continually be utilized [2]. Normalization is done by dividing the vector at iteration by its largest value, the infinity norm, so that the new largest value in the vector is 1. If $x_k$ is the kth iteration of the algorithm, then $x_k = \frac{Ax_{k-1}}{\lVert Ax_{k-1} \rVert_{\infty}}$. Normalization or scaling keeps the vector after each iteration from becoming either too large or too small. It is also good practice to normalize the random starting vector, $x_0$, such that its greatest value, $\lVert x_0 \rVert_{\infty}$, becomes 1. 
 
@@ -47,10 +65,27 @@ end
 eigVal = A*x/x                             {Having found eigenvector, x, solve for corresponding eigenvalue}
 ```
 
+Example: Given matrix A = [1 -2; -4 3] which has dominant eigenvalues of 5 with corresponding eigenvector of $[-0.5, 1]^T$
+
+Initial vector, $x_0$, = $[1, -1]^T$.
+
+|Kth Iteration|$x_k^T$       |Normalized $x_k^T$|
+|:-----------:|:------------:|:----------------:|
+|0            |1,          -1|1,              -1|
+|1            |3,          -7|-0.429,          1|
+|2            |-2.429,  4.714|-0.515,          1|
+|3            |-2.515,  5.061|-0.497,          1|
+|4            |-2.497,  4.988|-0.501,          1|
+|5            |-2.501,  5.002|-0.5,            1|
+|6            |-2.5,        5|-0.5,            1|
+
+Thus, normalized power iteration works as it still approached the dominant eigenvector $[-0.5, 1]^T$ without the vector, $x_k^T$, greatly increasing in size.
+
 Another alteration to the power method is the shifting of eigenvalues. If $Ax = \lambda x$, then the eigenvalues can be shifted by any number $\alpha$ through $(A-\alpha I)x = (\lambda-\alpha)x$ [5]. If the aproximate area of an eigenvalue is known for matrix A, then matrix A can be shifted by $\alpha$, and it will converge to $\sigma$ through shifted inverse power method such that $\sigma = \frac{1}{\lambda-\alpha}$ where $\lambda$ is the desired eigenvalue. Having started with a random vector $x_0$, the shifted inverse power method is defined as the iteration [5]:
 $$y_k = (A-\alpha I)^{-1}x_k$$
 $$x_{k+1} = \frac{y_k}{\lVert y_k \rVert_{\infty}}$$
 $x_{k+1}$ will converge to the eigenvector which corresponds to the shifted eigenvalue $\sigma$. Then, the actual desired eigenvalue can be found by solving $\lambda = \frac{1}{\sigma} + \alpha$. Therefore, by choosing a random $\alpha$ which is close to a desired eigenvalue which is not the dominant eigenvalue, shifted inverse power method can be employed and will converge to a value $\sigma$ which can be used to find the desired eigenvalue and eigenvector [5].
+
 ## Strengths and Limitations
 There are multiple reasons that will cause the power method to fail. If the initial random vector, $x_0$, does not have any component in the direction of dominant eigenvector, i.e. $a_1 = 0$ for $x_0 = a_1x_1 + a_2x_2 + ... + a_nx_n$, then the power method will never be able to converge to the largest eigenvector causing the algorithm to fail [6]. Although, in real world application, this problem often does not occur do the the fact that rounding errors in computers during iterations will cause the vector to have a very slight component in the direction of the dominant eigenvector allowing the power method to converge to the dominant eigenvector eventually [6]. Another reason for the power method to fail is the existance of multiple dominant eigenvalues in the given matrix A. If two eigenvalues of the same magnitude exist, then the power method will not converge to one of the matrix's eigenvectors, but instead it will converge to a linear combination of the eigenvectors which correspond to the multiple dominant eigenvalues [6]. The power method can also fail if imaginary numbers have not been taken into consideration when utilizing the power method. The dominant eigenvalue and dominant eigenvector could both potentially contain an imaginary number, in which case the power method algorithm will fail and never converge to dominant eigenvector if it is only using real numbers [6]. This can be avoided by including imaginary numbers in the random starting vector, $x_0$. Thus, the algorithm will be able to handle imaginary numbers if they are required for a given matrix. Finally, if the given matrix is ill-conditioned, then the power method can often fail and can have significant error.
 
