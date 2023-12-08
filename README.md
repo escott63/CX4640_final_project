@@ -31,8 +31,12 @@ From this equation, $\lambda_1$ and $x_1$, which are the dominant eigenvalue and
 
 ![](Animation_of_the_Power_Iteration_Algorithm.gif) [3]
 
-
+The algorithm stops when consecutive iterations have been mutliplied by the same number with this number being the dominant eigenvalue. 
 ## Improvements
+One of the obvious problems with the initial algorithm for the power method is that, as k increases, $\lambda_1^ka_1x_1$ can increase to an extremely large value or an extremely small value if $|\lambda_1| < 1$. This will cause an overflow or an underflow as the measured vector gets either too large or small for the computer to do calculations. Therefore, normalization or scaling in each iteration is required so that the measured vector is able to continually be utilized [2]. Normalization is done by dividing the vector at iteration by its largest value, the infinity norm, so that the new largest value in the vector is 1. If $x_k$ is the kth iteration of the algorithm, then $x_k = \frac{Ax_{k-1}}{||Ax_{k-1}||_{\infty}}$. Normalization or scaling keeps the vector after each iteration from becoming either too large or too small.
+
+The full process for power method:
+
 
 ## Strengths and Limitations
 
