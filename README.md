@@ -33,11 +33,18 @@ From this equation, $\lambda_1$ and $x_1$, which are the dominant eigenvalue and
 
 The algorithm stops when consecutive iterations have been mutliplied by the same number with this number being the dominant eigenvalue.
 ## Improvements
-One of the obvious problems with the initial algorithm for the power method is that, as k increases, $\lambda_1^ka_1x_1$ can increase to an extremely large value or an extremely small value if $|\lambda_1| < 1$. This will cause an overflow or an underflow as the measured vector gets either too large or small for the computer to do calculations. Therefore, normalization or scaling in each iteration is required so that the measured vector is able to continually be utilized [2]. Normalization is done by dividing the vector at iteration by its largest value, the infinity norm, so that the new largest value in the vector is 1. If $x_k$ is the kth iteration of the algorithm, then $x_k = \frac{Ax_{k-1}}{\lVert Ax_{k-1} \rVert_{\infty}}$. Normalization or scaling keeps the vector after each iteration from becoming either too large or too small. It is also good practice to choose a normalized random starting vector, $x_0$, such that its greatest value, $\lVert x_0 \rVert_{\infty}$, is 1. 
+One of the obvious problems with the initial algorithm for the power method is that, as k increases, $\lambda_1^ka_1x_1$ can increase to an extremely large value or an extremely small value if $|\lambda_1| < 1$. This will cause an overflow or an underflow as the measured vector gets either too large or small for the computer to do calculations. Therefore, normalization or scaling in each iteration is required so that the measured vector is able to continually be utilized [2]. Normalization is done by dividing the vector at iteration by its largest value, the infinity norm, so that the new largest value in the vector is 1. If $x_k$ is the kth iteration of the algorithm, then $x_k = \frac{Ax_{k-1}}{\lVert Ax_{k-1} \rVert_{\infty}}$. Normalization or scaling keeps the vector after each iteration from becoming either too large or too small. It is also good practice to normalize the random starting vector, $x_0$, such that its greatest value, $\lVert x_0 \rVert_{\infty}$, becomes 1. 
 
-The full process for power method []:
+Pseudocode for power method with normalization [4]:
 ```
-
+x0 = arbitrary nonzero starting vector
+x0 = x0/max(x0)                            {Normalize the starting vector}
+x = A*x0/max(A*x0)                         {First iteration with normalization}
+while x ~= x0                              {Loop until the vectors are equal}
+  x0 = x                                   {Overwrite x0 for next iteration}
+  x = A*x0/max(A*x0)                       {Find next iteration with normalization}
+end
+eigVal = A*x/x                             {Having found eigenvector, x, solve for corresponding eigenvalue}
 ```
 
 ## Strengths and Limitations
