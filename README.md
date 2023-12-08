@@ -47,13 +47,15 @@ end
 eigVal = A*x/x                             {Having found eigenvector, x, solve for corresponding eigenvalue}
 ```
 
+Another alteration to the power method is the shifting of eigenvalues. 
 ## Strengths and Limitations
 
 ## Common Applications
 
 ## References
 1. 0.3 POWER METHOD FOR APPROXIMATING EIGENVALUES. (n.d.). [https://ergodic.ugr.es/cphys/LECCIONES/FORTRAN/power_method.pdf](https://ergodic.ugr.es/cphys/LECCIONES/FORTRAN/power_method.pdf)
-2. Lecture # 10 The Power Method for Eigenvalues. (n.d.). Retrieved December 7, 2023, from [https://www.cse.psu.edu/~b58/cse456/lecture10.pdf](https://www.cse.psu.edu/~b58/cse456/lecture10.pdf)
+2. Lecture # 10 The Power Method for Eigenvalues. (n.d.). from [https://www.cse.psu.edu/~b58/cse456/lecture10.pdf](https://www.cse.psu.edu/~b58/cse456/lecture10.pdf)
 3. 
-4. Vector iteration (power method) 7.1 Simple vector iteration. (n.d.). Retrieved December 8, 2023, from [https://people.inf.ethz.ch/arbenz/ewp/Lnotes/chapter7.pdf](https://people.inf.ethz.ch/arbenz/ewp/Lnotes/chapter7.pdf)
-5. 
+4. Vector iteration (power method) 7.1 Simple vector iteration. (n.d.). from [https://people.inf.ethz.ch/arbenz/ewp/Lnotes/chapter7.pdf](https://people.inf.ethz.ch/arbenz/ewp/Lnotes/chapter7.pdf)
+5. Yu-Kai Hong, An introduction to the Power Method and (shifted/Inverse) Power Method, 2007, from [http://www.math.nuk.edu.tw/jinnliu/Software_Engineering/IS_PowerMethod.pdf](http://www.math.nuk.edu.tw/jinnliu/Software_Engineering/IS_PowerMethod.pdf)
+6. 
